@@ -1,0 +1,63 @@
+http://player.fretx.rocks/api/v1/songs/index.json
+
+The index of user-created song content.
+
+Format:
+
+{
+	id: 		(Int) 		Internal database index (irrelevant)
+	youtube_id: (String) 	Video's Youtube ID
+	fretx_id:	(String) 	Unique ID for user-created song content 	
+	uploaded_on:(String)	Timestamp of Youtube upload (irrelevant)
+	title:		(String)	Full title of song including artist name
+	artist:		(String)	Artist name
+	uploaded_by:(Int)		Internal User ID (irrelevant)
+	created_at:	(String)	Timestamp showing creation date of user-created song content
+	updated_at: (String)	Timestamp showing last update date of user-created song content
+	song_title:	(String)	Song title 
+	published:	(Bool)		Indicates whether the song content is allowed for public access. **If false, do not show it in the app**
+	promotion:	(Bool)		Internal use (irrelevant)
+	genre:		(String)	Musical genre of the song
+	difficulty: (String)	A difficulty estimation for the learner
+}	
+
+
+
+
+
+http://player.fretx.rocks/api/v1/songs/<fretx_id>.json
+
+Song content for a given fretx_id , as obtained from the index.json
+
+{
+	id: 		(Int) 		Internal database index (irrelevant)
+	youtube_id: (String) 	Video's Youtube ID
+	fretx_id:	(String) 	Unique ID for user-created song content 	
+	uploaded_on:(String)	Timestamp of Youtube upload (irrelevant)
+	title:		(String)	Full title of song including artist name
+	artist:		(String)	Artist name
+	uploaded_by:(Int)		Internal User ID (irrelevant)
+	created_at:	(String)	Timestamp showing creation date of user-created song content
+	updated_at: (String)	Timestamp showing last update date of user-created song content
+	song_title:	(String)	Song title 
+	published:	(Bool)		Indicates whether the song content is allowed for public access. **If false, do not show it in the app**
+	promotion:	(Bool)		Internal use (irrelevant)
+	genre:		(String)	Musical genre of the song
+	difficulty: (String)	A difficulty estimation for the learner
+	punches:	(Object)	A JSON object containing the chord timings
+}	
+
+	The "punches" object is an array of objects, which are explained below:
+punches: {
+	time_ms:	(Int)		Time instant in miliseconds when the chord begins
+	chord:		(Object)	A JSON object containing chord information
+}
+
+chord: {
+	name:		(String)	Full name of the chord
+	root:		(String)	Root note of the chord
+	rootval:	(Int)		Corresponding index for the root note of the chord (irrelevant)
+	quality:	(String)	The quality (type) of the chord
+	fingering	([Int])		An integer array that contains the bytecodes recognized by the FretX device, that corresponds to this chord's fingering
+}
+

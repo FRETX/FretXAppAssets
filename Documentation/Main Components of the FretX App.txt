@@ -1,0 +1,35 @@
+Main Components of the FretX App:
+
+*Play
+	Song list - searchable, pulled from FretX API, JSON parsing, caching, incremental updates to cache
+		Preview Mode - JSON parsing, FretboardView
+		Play Mode - Embedded Youtube , JSON parsing, FretboardView , Chord timeline (custom animated view a la Guitar Hero), AB looping, progress bar-youtube player connection
+*Learn
+	Chord Exercises - JSON parsing, FretboardView, audio recognition, MIDI playing, time statistic keeping, bluetooth
+	Custom Chord Exercises - spinner selector, FretboardView, user-editable list of user-editable chord lists, bluetooth
+	Chord Library - spinner selector, FretboardView, bluetooth
+	Scale Library - spinner selector, FretboardView, bluetooth 
+	MIDI
+
+*Tuner
+	audio recognition, custom animation (TunerBar), custom view for selecting guitar strings
+
+*Settings 
+	Firebase auth - profile pic, etc
+	Firebase synchronization of user preferences
+	Intercom integration
+
+*Login
+	Firebase auth - using Facebook, Google, and custom email/pw login
+
+*Onboarding
+	Showing videos
+	Sending camera pic via Intercom
+	Recording user preferences
+
+*Misc
+	Firebase analytics
+	Firebase crash reporting
+
+
+We can provide Java source code from our Android app to speed up the architecture/design process. Please see the attached pictures to give an indication of the amount of code we have. Bear in mind about half of them are just one-page classes, and that we don't want 100% coverage of all this functionality for the first minimum-viable version
